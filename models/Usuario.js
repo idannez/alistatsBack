@@ -7,7 +7,8 @@ const UsuarioSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     nombreUsuario: {
         type: String,
@@ -19,8 +20,20 @@ const UsuarioSchema = mongoose.Schema({
     },
     rol: {
         type: String,
-        required: true
+        required: false
+    },
+    summonerAccount: {
+        type: String,
+        required: false
+    },
+    summonerName: {
+        type: String,
+        required: false
+    },
+    discord: {
+        type:String,
+        required: false
     }
-},{collection: 'usuarios'});
+},{collection: 'users'});
 
 module.exports = mongoose.model('Usuario', UsuarioSchema);

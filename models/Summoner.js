@@ -28,7 +28,15 @@ const SummonerSchema = mongoose.Schema({
     summonerLevel: {
         type: Number,
         required: true
+    },
+    refreshTime: {
+        type:Number,
+        required: false
+    },
+    platform: {
+        type:String,
+        required: false
     }
-});
+},{collection: 'summonersinfo'});
 
 module.exports = mongoose.model('Summoner', SummonerSchema);
